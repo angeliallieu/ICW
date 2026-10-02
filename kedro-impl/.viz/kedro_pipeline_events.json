@@ -1,0 +1,290 @@
+[
+  {
+    "event": "before_pipeline_run",
+    "timestamp": "2026-10-07T00:08:08.004769+00:00"
+  },
+  {
+    "event": "after_node_run",
+    "node": "load_data_node",
+    "node_id": "8e007b82",
+    "duration": 0.006168399995658547,
+    "status": "success"
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "raw_breast_cancer",
+    "node_id": "6a6771a5",
+    "status": "Available",
+    "size": 0
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "raw_y",
+    "node_id": "72c0741d",
+    "status": "Available",
+    "size": 1715
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "raw_breast_cancer",
+    "node_id": "6a6771a5",
+    "status": "Available",
+    "size": 0
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "raw_y",
+    "node_id": "72c0741d",
+    "status": "Available",
+    "size": 1715
+  },
+  {
+    "event": "after_node_run",
+    "node": "clean_data_node",
+    "node_id": "6a04d0ca",
+    "duration": 0.004266100004315376,
+    "status": "success"
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "cleaned_data",
+    "node_id": "bf35a60c",
+    "status": "Available",
+    "size": 120780
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "cleaned_y",
+    "node_id": "e143ee35",
+    "status": "Available",
+    "size": 1715
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "cleaned_data",
+    "node_id": "bf35a60c",
+    "status": "Available",
+    "size": 120780
+  },
+  {
+    "event": "after_node_run",
+    "node": "normalize_features_node",
+    "node_id": "a502eaf7",
+    "duration": 0.002703299978747964,
+    "status": "success"
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "normalized_data",
+    "node_id": "f2a74ce3",
+    "status": "Available",
+    "size": 338160
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "feature_scaler",
+    "node_id": "0235dd5b",
+    "status": "Available",
+    "size": 1771
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "normalized_data",
+    "node_id": "f2a74ce3",
+    "status": "Available",
+    "size": 338160
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "cleaned_y",
+    "node_id": "e143ee35",
+    "status": "Available",
+    "size": 1715
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "parameters",
+    "node_id": "f1f1425b",
+    "status": "Available",
+    "size": 0
+  },
+  {
+    "event": "after_node_run",
+    "node": "preprocess_features_node",
+    "node_id": "a3d9e27e",
+    "duration": 0.005516999983228743,
+    "status": "success"
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "preprocessed_data",
+    "node_id": "4aa6555d",
+    "status": "Available",
+    "size": 221881
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "preprocessed_data",
+    "node_id": "4aa6555d",
+    "status": "Available",
+    "size": 221881
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "cleaned_y",
+    "node_id": "e143ee35",
+    "status": "Available",
+    "size": 1715
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "parameters",
+    "node_id": "f1f1425b",
+    "status": "Available",
+    "size": 0
+  },
+  {
+    "event": "after_node_run",
+    "node": "train_test_split_node",
+    "node_id": "085890ad",
+    "duration": 0.007120299997041002,
+    "status": "success"
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "X_train",
+    "node_id": "cae2d1c7",
+    "status": "Available",
+    "size": 155238
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "X_test",
+    "node_id": "872981f9",
+    "status": "Available",
+    "size": 66915
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "y_train",
+    "node_id": "9ca016a8",
+    "status": "Available",
+    "size": 1202
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "y_test",
+    "node_id": "f6d9538c",
+    "status": "Available",
+    "size": 521
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "X_train",
+    "node_id": "cae2d1c7",
+    "status": "Available",
+    "size": 155238
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "y_train",
+    "node_id": "9ca016a8",
+    "status": "Available",
+    "size": 1202
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "parameters",
+    "node_id": "f1f1425b",
+    "status": "Available",
+    "size": 0
+  },
+  {
+    "event": "after_node_run",
+    "node": "train_model_node",
+    "node_id": "a3b859fa",
+    "duration": 0.1152396000106819,
+    "status": "success"
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "trained_model",
+    "node_id": "8c812b47",
+    "status": "Available",
+    "size": 295935
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "trained_model",
+    "node_id": "8c812b47",
+    "status": "Available",
+    "size": 295935
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "X_test",
+    "node_id": "872981f9",
+    "status": "Available",
+    "size": 66915
+  },
+  {
+    "event": "after_node_run",
+    "node": "predict_node",
+    "node_id": "dad3a6f1",
+    "duration": 0.06353130002389662,
+    "status": "success"
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "predictions",
+    "node_id": "3812e4ce",
+    "status": "Available",
+    "size": 1544
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "y_test",
+    "node_id": "f6d9538c",
+    "status": "Available",
+    "size": 521
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "predictions",
+    "node_id": "3812e4ce",
+    "status": "Available",
+    "size": 1544
+  },
+  {
+    "event": "after_dataset_loaded",
+    "dataset": "trained_model",
+    "node_id": "8c812b47",
+    "status": "Available",
+    "size": 295935
+  },
+  {
+    "event": "after_node_run",
+    "node": "evaluate_node",
+    "node_id": "7470566e",
+    "duration": 0.008673600008478388,
+    "status": "success"
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "metrics",
+    "node_id": "966b9734",
+    "status": "Available",
+    "size": 142
+  },
+  {
+    "event": "after_dataset_saved",
+    "dataset": "confusion_matrix",
+    "node_id": "dc5bd857",
+    "status": "Available",
+    "size": 32
+  },
+  {
+    "event": "after_pipeline_run",
+    "timestamp": "2026-10-07T00:08:08.512500+00:00"
+  }
+]
