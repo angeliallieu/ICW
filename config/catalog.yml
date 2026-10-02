@@ -1,0 +1,99 @@
+# ============================================================================
+# Kedro Data Catalog
+#
+# Definiert für die Kedro-Pipeline:
+# - Input-Dataset
+# - Intermediate-Datasets (Zwischenergebnisse)
+# - Output-Datasets
+#
+# Jeder Node input/output wird hier deklariert.
+# Kedro verwaltet dann automatisch Laden/Speichern der Datasets.
+# ============================================================================
+
+# ============================================================================
+# 01_RAW: Original Breast Cancer Dataset
+# ============================================================================
+raw_breast_cancer:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/breast_cancer_raw.csv
+  save_args:
+    index: false
+
+# ============================================================================
+# 02_INTERMEDIATE: Nach Data Cleaning & Normalisierung
+# ============================================================================
+cleaned_data:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/breast_cancer_cleaned.csv
+  save_args:
+    index: false
+
+normalized_data:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/breast_cancer_normalized.csv
+  save_args:
+    index: false
+
+# Scaler als joblib für später (beim Prediction auf Test-Set)
+feature_scaler:
+  type: pickle.PickleDataSet
+  filepath: data/02_intermediate/feature_scaler.joblib
+
+# ============================================================================
+# 03_PRIMARY: Nach Feature Engineering & Deterministische Train/Test Split
+# ============================================================================
+preprocessed_data:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/preprocessed_features.csv
+  save_args:
+    index: false
+
+X_train:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/X_train.csv
+  save_args:
+    index: false
+
+X_test:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/X_test.csv
+  save_args:
+    index: false
+
+y_train:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/y_train.csv
+  save_args:
+    index: false
+
+y_test:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/y_test.csv
+  save_args:
+    index: false
+
+# ============================================================================
+# 04_MODELS: Trainierte ML-Modelle
+# ============================================================================
+trained_model:
+  type: pickle.PickleDataSet
+  filepath: data/04_models/random_forest_model.joblib
+
+# ============================================================================
+# 05_METRICS: Evaluation & Predictions
+# ============================================================================
+predictions:
+  type: pandas.CSVDataSet
+  filepath: data/05_metrics/predictions.csv
+  save_args:
+    index: false
+
+metrics:
+  type: json.JSONDataSet
+  filepath: data/05_metrics/metrics.json
+
+confusion_matrix:
+  type: pandas.CSVDataSet
+  filepath: data/05_metrics/confusion_matrix.csv
+  save_args:
+    index: false

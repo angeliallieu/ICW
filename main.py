@@ -1,16 +1,10 @@
-# This is a sample Python script.
-
-# Press Umschalt+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Strg+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print("ICW-Projekt: Vanilla vs. Kedro ML Pipeline")
+    print("=" * 60)
+    print("\nWähle einen Ausführungsmodus:")
+    print("1. Vanilla Pipeline: python -m src.pipelines.vanilla.runner")
+    print("2. Unit Tests: pytest tests/test_data_processing.py -v")
+    print("3. Integration Test: pytest tests/test_integration.py -v")
+    print("4. Alle Tests: pytest tests/ -v")
+    print("\nSiehe README.md für Details.")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/

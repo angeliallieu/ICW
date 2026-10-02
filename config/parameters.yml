@@ -1,0 +1,110 @@
+# ============================================================================
+# ML Pipeline Parameter Configuration
+# 
+# Diese Datei wird von BEIDEN Pipelines genutzt:
+# 1. Vanilla-Pipeline (src/pipelines/vanilla/runner.py)
+# 2. Kedro-Pipeline (src/pipelines/kedro_pipeline/*)
+#
+# Alle random_state Werte sind für Reproduzierbarkeit fixiert!
+# ============================================================================
+
+# ============================================================================
+# DATA PROCESSING PARAMETERS
+# ============================================================================
+data:
+  # Pfad zum Raw Dataset (wird von load_breast_cancer() generiert)
+  raw_path: "data/01_raw/breast_cancer.csv"
+  
+  # Pfad zum bereinigten/normalisierten Dataset
+  processed_path: "data/02_intermediate/breast_cancer_processed.csv"
+  
+  # Random State für deterministische Operationen
+  random_state: 42
+
+# ============================================================================
+# FEATURE ENGINEERING PARAMETERS
+# ============================================================================
+feature_engineering:
+  # Test-Set Größe
+  test_size: 0.3
+  
+  # Random State für train_test_split() - ESSENTIELL für Reproduzierbarkeit!
+  # Gleicher random_state = gleiche Aufteilung, egal wie oft man trainiert
+  random_state: 42
+  
+  # Anzahl der Features, die SelectKBest auswählt
+  # Breast Cancer hat ursprünglich 30 Features, wir nehmen die besten 20
+  n_features_to_select: 20
+  
+  # Normalisierung
+  use_scaling: true
+  scaler_type: "standard"  # StandardScaler (mean=0, std=1)
+
+# ============================================================================
+# MODELING PARAMETERS
+# ============================================================================
+model:
+  # Algorithmus: "random_forest" oder "logistic_regression"
+  algorithm: "random_forest"
+  
+  # Random Forest Hyperparameter
+  random_forest:
+    n_estimators: 100          # Anzahl der Decision Trees
+    max_depth: 10              # Maximale Baumtiefe (verhindert Overfitting)
+    min_samples_split: 2       # Min. Samples um einen Node zu splitten
+    min_samples_leaf: 1        # Min. Samples in einem Blatt
+    random_state: 42           # KRITISCH: Für Reproduzierbarkeit
+    n_jobs: -1                 # Alle Prozessoren nutzen
+    verbose: 0
+  
+  # Logistic Regression Parameter (falls algorithm == "logistic_regression")
+  logistic_regression:
+    C: 1.0                     # Inverse Regularisierung
+    solver: "lbfgs"            # Optimizer
+    max_iter: 1000
+    random_state: 42
+  
+  # Test-Setup
+  test_random_state: 42        # Für Seeds beim Testing
+
+# ============================================================================
+# EVALUATION PARAMETERS
+# ============================================================================
+evaluation:
+  # Metriken, die berechnet werden sollen
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - roc_auc
+  
+  # Confusion Matrix berechnen?
+  compute_confusion_matrix: true
+
+# ============================================================================
+# OUTPUT PATHS
+# Verwendet von BEIDEN Pipelines
+# ============================================================================
+paths:
+  # Verzeichnisse
+  raw_dir: "data/01_raw"
+  intermediate_dir: "data/02_intermediate"
+  primary_dir: "data/03_primary"
+  models_dir: "data/04_models"
+  metrics_dir: "data/05_metrics"
+  
+  # Dateinamen
+  model_filename: "random_forest_model.joblib"
+  scaler_filename: "feature_scaler.joblib"
+  metrics_filename: "metrics.json"
+  confusion_matrix_filename: "confusion_matrix.csv"
+  predictions_filename: "predictions.csv"
+
+# ============================================================================
+# LOGGING & DEBUG
+# ============================================================================
+logging:
+  # Verbosity Level: "quiet", "normal", "verbose"
+  level: "normal"
+  print_progress: true
