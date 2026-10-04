@@ -7,7 +7,7 @@
 # - Output-Datasets
 #
 # Jeder Node input/output wird hier deklariert.
-# Kedro verwaltet dann automatisch Laden/Speichern der Datasets.
+# Kedro verwaltet automatisch Laden/Speichern der Datasets.
 # ============================================================================
 
 # ============================================================================

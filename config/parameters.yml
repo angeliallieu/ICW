@@ -13,7 +13,7 @@
 # ============================================================================
 data:
   # Pfad zum Raw Dataset (wird von load_breast_cancer() generiert)
-  raw_path: "data/01_raw/breast_cancer.csv"
+  raw_path: "data/01_raw/breast_cancer_raw.csv"
   
   # Pfad zum bereinigten/normalisierten Dataset
   processed_path: "data/02_intermediate/breast_cancer_processed.csv"
@@ -28,12 +28,11 @@ feature_engineering:
   # Test-Set Größe
   test_size: 0.3
   
-  # Random State für train_test_split() - ESSENTIELL für Reproduzierbarkeit!
-  # Gleicher random_state = gleiche Aufteilung, egal wie oft man trainiert
+  # Random State für train_test_split()
   random_state: 42
   
   # Anzahl der Features, die SelectKBest auswählt
-  # Breast Cancer hat ursprünglich 30 Features, wir nehmen die besten 20
+  # Breast Cancer hat ursprünglich 30 Features, es werden 20 ausgewählt
   n_features_to_select: 20
   
   # Normalisierung
@@ -53,7 +52,7 @@ model:
     max_depth: 10              # Maximale Baumtiefe (verhindert Overfitting)
     min_samples_split: 2       # Min. Samples um einen Node zu splitten
     min_samples_leaf: 1        # Min. Samples in einem Blatt
-    random_state: 42           # KRITISCH: Für Reproduzierbarkeit
+    random_state: 42           # Für Reproduzierbarkeit
     n_jobs: -1                 # Alle Prozessoren nutzen
     verbose: 0
   

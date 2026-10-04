@@ -23,12 +23,12 @@ from sklearn.preprocessing import StandardScaler
 from typing import Tuple, Optional
 
 
-def load_breast_cancer(csv_path: str = "data/01_raw/breast-cancer.csv") -> Tuple[pd.DataFrame, pd.Series]:
+def load_breast_cancer(csv_path: str = "data/01_raw/breast_cancer_raw.csv") -> Tuple[pd.DataFrame, pd.Series]:
     """
     Lädt den Breast Cancer Dataset von einer lokalen CSV-Datei.
 
     Diese Funktion:
-    1. Lädt die CSV-Datei von data/01_raw/breast-cancer.csv
+    1. Lädt die CSV-Datei von data/01_raw/breast_cancer_raw.csv
     2. Trennt Features (X) und Target (y)
     3. Encodiert Target: M (Malignant) → 1, B (Benign) → 0
     4. Entfernt die id-Spalte (nicht relevant für ML)
@@ -41,7 +41,7 @@ def load_breast_cancer(csv_path: str = "data/01_raw/breast-cancer.csv") -> Tuple
     Parameters:
     -----------
     csv_path : str
-        Pfad zur CSV-Datei (Default: "data/01_raw/breast-cancer.csv")
+        Pfad zur CSV-Datei (Default: "data/01_raw/breast_cancer_raw.csv")
 
     Returns:
     --------
@@ -55,7 +55,7 @@ def load_breast_cancer(csv_path: str = "data/01_raw/breast-cancer.csv") -> Tuple
 
     Beispiel:
     ---------
-    >>> X, y = load_breast_cancer("data/01_raw/breast-cancer.csv")
+    >>> X, y = load_breast_cancer("data/01_raw/breast_cancer_raw.csv")
     >>> X.shape
     (569, 30)
     >>> y.value_counts()
@@ -142,7 +142,7 @@ def normalize_features(
     2. Transform: Normalisiert Features zu (Feature - mean) / std
     3. Gibt bereinigte Features + Scaler zurück
     
-    ✅ RICHTIG:
+    RICHTIG:
         # Scaler NUR auf Train fit
         scaler = StandardScaler()
         X_train_normalized = scaler.fit_transform(X_train)

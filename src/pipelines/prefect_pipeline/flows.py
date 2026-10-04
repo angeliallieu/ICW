@@ -51,7 +51,7 @@ def ensure_directories(config: dict) -> None:
 
 
 # =============================================================================
-# PREFECT TASKS (8 Tasks für den ML-Workflow)
+# PREFECT TASKS (8 Tasks)
 # =============================================================================
 
 @task(
