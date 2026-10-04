@@ -5,7 +5,7 @@
 # 1. Vanilla-Pipeline (src/pipelines/vanilla/runner.py)
 # 2. Kedro-Pipeline (src/pipelines/kedro_pipeline/*)
 #
-# Alle random_state Werte sind für Reproduzierbarkeit fixiert!
+# Alle random_state Werte sind für Reproduzierbarkeit fixiert
 # ============================================================================
 
 # ============================================================================

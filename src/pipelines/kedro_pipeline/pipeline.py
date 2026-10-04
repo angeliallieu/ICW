@@ -6,7 +6,6 @@ KEDRO PIPELINE: Pipeline Definition (Workflow)
 
 from kedro.pipeline import Pipeline, node
 
-# Importiere die Nodes aus nodes.py
 from .nodes import (
     node_load_data,
     node_clean_data,
@@ -141,29 +140,5 @@ def create_pipeline() -> Pipeline:
     return pipeline
 
 
-# =============================================================================
-# DEBUGGING: Pipeline Visualization (Optional)
-# =============================================================================
-
-def visualize_pipeline():
-    """
-    Druckt eine Text-Darstellung der Pipeline.
-    (Gedacht zum Debuggen der Dependencies)
-    """
-    pipeline = create_pipeline()
-
-    print("\n" + "="*80)
-    print("PIPELINE STRUKTUR:")
-    print("="*80)
-
-    for node_obj in pipeline.nodes:
-        print(f"\nNode: {node_obj.name}")
-        print(f"  Function: {node_obj.func.__name__}")
-        print(f"  Inputs: {node_obj.inputs}")
-        print(f"  Outputs: {node_obj.outputs}")
-        print(f"  Tags: {node_obj.tags}")
-
-
-if __name__ == "__main__":
-    # Zum Testen: python src/pipelines/kedro_pipeline/pipeline.py
-    visualize_pipeline()
+# if __name__ == "__main__":
+#     visualize_pipeline()
