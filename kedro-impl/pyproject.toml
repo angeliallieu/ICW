@@ -10,7 +10,7 @@ dynamic = ["dependencies", "version"]
 [tool.kedro]
 package_name = "icw"
 project_name = "icw"
-kedro_init_version = "1.7.0"
+kedro_init_version = "0.19.0"
 tools = "[]"
 
 [project.entry-points."kedro.hooks"]
