@@ -1,13 +1,13 @@
 [
   {
     "event": "before_pipeline_run",
-    "timestamp": "2026-10-07T00:08:08.004769+00:00"
+    "timestamp": "2026-10-07T16:15:38.168022+00:00"
   },
   {
     "event": "after_node_run",
     "node": "load_data_node",
     "node_id": "8e007b82",
-    "duration": 0.006168399995658547,
+    "duration": 0.0752461000229232,
     "status": "success"
   },
   {
@@ -42,7 +42,7 @@
     "event": "after_node_run",
     "node": "clean_data_node",
     "node_id": "6a04d0ca",
-    "duration": 0.004266100004315376,
+    "duration": 0.01968180004041642,
     "status": "success"
   },
   {
@@ -70,7 +70,7 @@
     "event": "after_node_run",
     "node": "normalize_features_node",
     "node_id": "a502eaf7",
-    "duration": 0.002703299978747964,
+    "duration": 0.010750400018878281,
     "status": "success"
   },
   {
@@ -112,7 +112,7 @@
     "event": "after_node_run",
     "node": "preprocess_features_node",
     "node_id": "a3d9e27e",
-    "duration": 0.005516999983228743,
+    "duration": 0.023202699958346784,
     "status": "success"
   },
   {
@@ -147,7 +147,7 @@
     "event": "after_node_run",
     "node": "train_test_split_node",
     "node_id": "085890ad",
-    "duration": 0.007120299997041002,
+    "duration": 0.014147599984426051,
     "status": "success"
   },
   {
@@ -203,7 +203,7 @@
     "event": "after_node_run",
     "node": "train_model_node",
     "node_id": "a3b859fa",
-    "duration": 0.1152396000106819,
+    "duration": 0.4052813000162132,
     "status": "success"
   },
   {
@@ -231,7 +231,7 @@
     "event": "after_node_run",
     "node": "predict_node",
     "node_id": "dad3a6f1",
-    "duration": 0.06353130002389662,
+    "duration": 0.11869299999671057,
     "status": "success"
   },
   {
@@ -266,7 +266,7 @@
     "event": "after_node_run",
     "node": "evaluate_node",
     "node_id": "7470566e",
-    "duration": 0.008673600008478388,
+    "duration": 0.024463300011120737,
     "status": "success"
   },
   {
@@ -285,6 +285,6 @@
   },
   {
     "event": "after_pipeline_run",
-    "timestamp": "2026-10-07T00:08:08.512500+00:00"
+    "timestamp": "2026-10-07T16:15:39.732758+00:00"
   }
 ]

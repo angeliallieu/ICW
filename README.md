@@ -13,6 +13,11 @@ cd ICW
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
+
+## Kedro specific
+cd kedro-impl
+pip install -r requirements.txt
+pip install -e .
 ```
 
 ### Run All Pipelines
@@ -38,8 +43,14 @@ python -m src.pipelines.vanilla.runner
 
 ### Kedro Pipeline
 ```bash
-# Nodes direkt nutzen
+# Nodes direkt nutzen (wichtig für vergleich)
 python scripts/run_kedro_pipeline.py
+
+#  Kedro Implementierung
+cd kedro-impl
+kedro run
+
+kedro viz
 ```
 
 ### Prefect Pipeline 
