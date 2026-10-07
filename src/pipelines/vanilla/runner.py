@@ -127,21 +127,17 @@ def main():
     print(f"  - Model Algorithmus: {config['model']['algorithm']}")
     print(f"  - Test Size: {config['feature_engineering']['test_size']}")
     print(f"  - Random State: {config['feature_engineering']['random_state']}")
-    
+
     # =========================================================================
     # SCHRITT 2: DATEN LADEN
     # =========================================================================
     print_step(2, "Daten laden (Breast Cancer Dataset)")
     X, y = load_breast_cancer()
-    print(f"✓ Dataset geladen von sklearn.datasets")
+    print(f"✓ Dataset geladen")
     print_data_info(X, y, "Raw Dataset")
     
     # Speichere Raw Data für Reproduzierbarkeit
     os.makedirs(config['paths']['raw_dir'], exist_ok=True)
-    X.to_csv(
-        os.path.join(config['paths']['raw_dir'], 'breast_cancer_raw.csv'),
-        index=False
-    )
     y.to_csv(
         os.path.join(config['paths']['raw_dir'], 'y_raw.csv'),
         index=False

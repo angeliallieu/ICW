@@ -38,8 +38,14 @@ python -m src.pipelines.vanilla.runner
 
 ### Kedro Pipeline
 ```bash
-# Nodes direkt nutzen
+# Nodes direkt nutzen (wichtig für vergleich)
 python scripts/run_kedro_pipeline.py
+
+#  Kedro Implementierung
+cd kedro-impl
+kedro run
+
+kedro viz
 ```
 
 ### Prefect Pipeline 

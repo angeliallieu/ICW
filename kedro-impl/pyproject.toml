@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "icw"
+readme = "README.md"
+dynamic = ["dependencies", "version"]
+
+[tool.kedro]
+package_name = "icw"
+project_name = "icw"
+kedro_init_version = "0.19.0"
+tools = "[]"
+
+[project.entry-points."kedro.hooks"]
+
+[tool.setuptools.dynamic.dependencies]
+file = "requirements.txt"
+
+[tool.setuptools.dynamic.version]
+attr = "icw.__version__"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+[tool.kedro_telemetry]
+project_id = "94ce3ab6a3e341e896b835bda2025f75"

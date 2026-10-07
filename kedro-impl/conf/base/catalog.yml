@@ -1,13 +1,13 @@
 # ============================================================================
-# Kedro Data Catalog
+# 01_RAW: Originaldatei (Wird von Kedro NUR GELESEN, nie beschrieben)
 # ============================================================================
-
-# ============================================================================
-# 01_RAW
-# ============================================================================
-raw_breast_cancer:
+breast_cancer_raw:
   type: pandas.CSVDataset
-  filepath: data/01_raw/breast_cancer_raw.csv
+  filepath: ../data/01_raw/breast_cancer_raw.csv
+
+raw_y:
+  type: pandas.CSVDataset
+  filepath: ../data/01_raw/raw_y.csv
   save_args:
     index: false
 
@@ -16,50 +16,56 @@ raw_breast_cancer:
 # ============================================================================
 cleaned_data:
   type: pandas.CSVDataset
-  filepath: data/02_intermediate/breast_cancer_cleaned.csv
+  filepath: ../data/02_intermediate/breast_cancer_cleaned.csv
+  save_args:
+    index: false
+
+cleaned_y:
+  type: pandas.CSVDataset
+  filepath: ../data/02_intermediate/breast_cancer_cleaned_y.csv
   save_args:
     index: false
 
 normalized_data:
   type: pandas.CSVDataset
-  filepath: data/02_intermediate/breast_cancer_normalized.csv
+  filepath: ../data/02_intermediate/breast_cancer_normalized.csv
   save_args:
     index: false
 
 feature_scaler:
   type: pickle.PickleDataset
-  filepath: data/02_intermediate/feature_scaler.joblib
+  filepath: ../data/02_intermediate/feature_scaler.joblib
 
 # ============================================================================
 # 03_PRIMARY
 # ============================================================================
 preprocessed_data:
   type: pandas.CSVDataset
-  filepath: data/03_primary/preprocessed_features.csv
+  filepath: ../data/03_primary/preprocessed_features.csv
   save_args:
     index: false
 
 X_train:
   type: pandas.CSVDataset
-  filepath: data/03_primary/X_train.csv
+  filepath: ../data/03_primary/X_train.csv
   save_args:
     index: false
 
 X_test:
   type: pandas.CSVDataset
-  filepath: data/03_primary/X_test.csv
+  filepath: ../data/03_primary/X_test.csv
   save_args:
     index: false
 
 y_train:
   type: pandas.CSVDataset
-  filepath: data/03_primary/y_train.csv
+  filepath: ../data/03_primary/y_train.csv
   save_args:
     index: false
 
 y_test:
   type: pandas.CSVDataset
-  filepath: data/03_primary/y_test.csv
+  filepath: ../data/03_primary/y_test.csv
   save_args:
     index: false
 
@@ -68,23 +74,23 @@ y_test:
 # ============================================================================
 trained_model:
   type: pickle.PickleDataset
-  filepath: data/04_models/random_forest_model.joblib
+  filepath: ../data/04_models/random_forest_model.joblib
 
 # ============================================================================
 # 05_METRICS
 # ============================================================================
 predictions:
   type: pandas.CSVDataset
-  filepath: data/05_metrics/predictions.csv
+  filepath: ../data/05_metrics/predictions.csv
   save_args:
     index: false
 
 metrics:
   type: json.JSONDataset
-  filepath: data/05_metrics/metrics.json
+  filepath: ../data/05_metrics/metrics.json
 
 confusion_matrix:
   type: pandas.CSVDataset
-  filepath: data/05_metrics/confusion_matrix.csv
+  filepath: ../data/05_metrics/confusion_matrix.csv
   save_args:
     index: false
